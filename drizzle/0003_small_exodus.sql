@@ -1,0 +1,1 @@
+ALTER TABLE "lead" ADD COLUMN "customer_type" varchar(100) NOT NULL;

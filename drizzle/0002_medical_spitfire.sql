@@ -1,0 +1,1 @@
+ALTER TABLE "lead" ADD COLUMN "company" varchar(255) NOT NULL;
