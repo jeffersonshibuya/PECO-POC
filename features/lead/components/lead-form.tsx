@@ -12,6 +12,7 @@ import { Copy, Loader2, Save } from "lucide-react";
 import MailingAddressInfo from "./form-sections/mailing-address-info";
 import ContactInfo from "./form-sections/contact-info";
 import { useCreateLead } from "../api/use-create-lead";
+import { useRouter } from "next/navigation";
 
 interface LeadFormProps {
   id?: string;
@@ -20,6 +21,7 @@ interface LeadFormProps {
 }
 
 const LeadForm = ({ defaultValues, onSubmit }: LeadFormProps) => {
+  const router = useRouter();
   const leadMutation = useCreateLead();
 
   const form = useForm<LeadFormValues>({
@@ -125,6 +127,7 @@ const LeadForm = ({ defaultValues, onSubmit }: LeadFormProps) => {
             <Button
               variant={"ghost"}
               type="button"
+              onClick={() => router.back()}
               className="text-sm/6 font-semibold text-gray-900"
             >
               Cancel
