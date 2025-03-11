@@ -8,6 +8,7 @@ import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Toaster } from "sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SheetProvider } from "@/providers/sheet-provider";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "PECO Intake Form",
@@ -30,7 +31,9 @@ export default function RootLayout({
 
             <PageWrapper>
               <NuqsAdapter>
-                <div className="p-4 mx-auto">{children}</div>
+                <Suspense>
+                  <div className="p-4 mx-auto">{children}</div>
+                </Suspense>
               </NuqsAdapter>
             </PageWrapper>
           </TooltipProvider>

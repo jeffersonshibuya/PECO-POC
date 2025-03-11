@@ -79,7 +79,11 @@ const ContactInfo = ({ form }: PersonalInfoProps) => {
             <FormItem>
               <FormLabel>Company</FormLabel>
               <FormControl>
-                <Input placeholder="company..." {...field} />
+                <Input
+                  placeholder="company..."
+                  {...field}
+                  value={field.value || ""}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
